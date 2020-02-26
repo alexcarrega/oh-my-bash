@@ -71,7 +71,7 @@ prompt() {
     # yes, these are the the same for now ...
     my_ps_host_root="${green}\h${normal}";
  
-    my_ps_user="${bold_green}\u${normal}"
+    my_ps_user="${bold_yellow}\u${normal}"
     my_ps_root="${bold_red}\u${normal}";
 
     if [ -n "$VIRTUAL_ENV" ]
@@ -82,15 +82,15 @@ prompt() {
     # nice prompt
     case "`id -u`" in
         0) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[$my_ps_root][$my_ps_host_root]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)
-└─▪ "
+└─■ "
         ;;
         *) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[$my_ps_user][$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)
-└─▪ "
+└─□ "
         ;;
     esac
 }
 
-PS2="└─▪ "
+PS2="└─■ "
 
 
 
